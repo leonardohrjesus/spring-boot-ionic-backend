@@ -36,7 +36,6 @@ public class ClienteService {
 	}
 	
 	public Cliente update(Cliente obj) {
-		
 		Cliente newObj =  find(obj.getId());
 		updateData(newObj,obj);
 		return repo.save(newObj);
@@ -47,7 +46,7 @@ public class ClienteService {
 		try {
 			repo.deleteById(id);  		
 		} catch (DataIntegrityViolationException e  ) {
-			throw new DataIntegrityException("Não é possivel excluir uma categoria que possui produtos");
+			throw new DataIntegrityException("Não é possivel excluir porque há entidades relacionadas");
 		}
 		
 	}
