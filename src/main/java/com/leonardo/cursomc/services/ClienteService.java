@@ -17,7 +17,6 @@ import com.leonardo.cursomc.domain.Endereco;
 import com.leonardo.cursomc.domain.enums.TipoCliente;
 import com.leonardo.cursomc.dto.ClienteDTO;
 import com.leonardo.cursomc.dto.ClienteNewDTO;
-import com.leonardo.cursomc.repositories.CidadeRepository;
 import com.leonardo.cursomc.repositories.ClienteRepository;
 import com.leonardo.cursomc.repositories.EnderecoRepository;
 import com.leonardo.cursomc.services.exceptions.DataIntegrityException;
