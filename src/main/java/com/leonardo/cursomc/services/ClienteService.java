@@ -32,9 +32,7 @@ public class ClienteService {
 	@Autowired
 	private EnderecoRepository enderecoRepository;
 	
-	
-	@Autowired
-	private CidadeRepository cidadeRepository;
+
 	
 	public Cliente find(Integer id) {
 		Optional<Cliente> obj = repo.findById(id);
