@@ -35,7 +35,7 @@ import com.leonardo.cursomc.repositories.ProdutoRepository;
 public class CursomcApplication implements CommandLineRunner {
 	
 	
-	/*@Autowired
+	@Autowired
 	private CategoriaRepository categoriaRepository;
 	
 	@Autowired
@@ -60,7 +60,7 @@ public class CursomcApplication implements CommandLineRunner {
 	private PagamentoRepository pagamentoRepository;
 	
 	@Autowired
-	private ItemPedidoRepository itemPedidoRepository;*/
+	private ItemPedidoRepository itemPedidoRepository;
 	
 	
 	public static void main(String[] args) {
@@ -69,7 +69,7 @@ public class CursomcApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-	/*	Categoria cat1 = new Categoria(null, "informatica");
+		Categoria cat1 = new Categoria(null, "informatica");
 		Categoria cat2 = new Categoria(null, "Escritorio");
 		Categoria cat3 = new Categoria(null, "Cama mesa e banho");
 		Categoria cat4 = new Categoria(null, "Eletrônicos");
@@ -130,7 +130,7 @@ public class CursomcApplication implements CommandLineRunner {
 		estadoRepository.saveAll(Arrays.asList(est1,est2));
 		cidadeRepository.saveAll(Arrays.asList(c1,c2,c3));
 		
-		Cliente cli1 = new Cliente(null, "Maria Silva", "maria@gmail.com", "36378912377", TipoCliente.PESSOAFISICA);
+		Cliente cli1 = new Cliente(null, "Maria Silva", "leonardo.hrjesus@gmail.com", "36378912377", TipoCliente.PESSOAFISICA);
 		
 		cli1.getTelefones().addAll(Arrays.asList("27363323", "93838393"));
 		
@@ -173,7 +173,7 @@ public class CursomcApplication implements CommandLineRunner {
 		
 		itemPedidoRepository.saveAll(Arrays.asList(ip1,ip2,ip3));
 		
-*/
+
 		}
 
 }

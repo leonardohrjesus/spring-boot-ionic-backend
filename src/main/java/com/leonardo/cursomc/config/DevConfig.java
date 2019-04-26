@@ -9,10 +9,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import com.leonardo.cursomc.services.DBService;
+import com.leonardo.cursomc.services.EmailService;
+import com.leonardo.cursomc.services.SmtpEmailService;
 
 
 @Configuration
-@Profile("teste")
+@Profile("dev")
 public class DevConfig {
 	
 	@Autowired
@@ -21,13 +23,18 @@ public class DevConfig {
 	@Value("${spring.jpa.hibernate.ddl-auto}")
 	private String strategy;
 	
-	@Bean
+	/*@Bean
 	public boolean instatiateDatabase() throws ParseException {
 		if(!"create".equals(strategy)) {
 			return false;
 		}
 		dbService.intantiateTestDatabase();
 		return true; 
+	}*/
+	
+	@Bean
+	public EmailService emailService() {
+		return new SmtpEmailService();
 	}
 
 }
