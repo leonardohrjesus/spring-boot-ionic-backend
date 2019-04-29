@@ -23,14 +23,14 @@ public class DevConfig {
 	@Value("${spring.jpa.hibernate.ddl-auto}")
 	private String strategy;
 	
-	/*@Bean
+	@Bean
 	public boolean instatiateDatabase() throws ParseException {
 		if(!"create".equals(strategy)) {
 			return false;
 		}
 		dbService.intantiateTestDatabase();
 		return true; 
-	}*/
+	}
 	
 	@Bean
 	public EmailService emailService() {
