@@ -1,5 +1,6 @@
 package com.leonardo.cursomc.resources.exception;
 
+import javax.security.sasl.AuthenticationException;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpStatus;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import com.leonardo.cursomc.services.exceptions.AuthorizationException;
 import com.leonardo.cursomc.services.exceptions.DataIntegrityException;
 import com.leonardo.cursomc.services.exceptions.ObjectNotFoundException;
 
@@ -41,6 +43,17 @@ public class ResourceExceotionHandler {
 	
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
 	}
+	
+	
+	
+	@ExceptionHandler(AuthorizationException.class)
+	public ResponseEntity<StandardError> authorization(ObjectNotFoundException e , HttpServletRequest request){
+		StandardError err = new StandardError(HttpStatus.FORBIDDEN.value(), e.getMessage(), System.currentTimeMillis());
+		
+		return ResponseEntity.status(HttpStatus.Authorization).body(err);
+	}
+
+	
 	
 	
 
