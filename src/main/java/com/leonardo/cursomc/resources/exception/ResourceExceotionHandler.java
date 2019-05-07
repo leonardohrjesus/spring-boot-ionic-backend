@@ -50,7 +50,7 @@ public class ResourceExceotionHandler {
 	public ResponseEntity<StandardError> authorization(ObjectNotFoundException e , HttpServletRequest request){
 		StandardError err = new StandardError(HttpStatus.FORBIDDEN.value(), e.getMessage(), System.currentTimeMillis());
 		
-		return ResponseEntity.status(HttpStatus.Authorization).body(err);
+		return ResponseEntity.status(HttpStatus.FORBIDDEN).body(err);
 	}
 
 	
