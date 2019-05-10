@@ -1,37 +1,8 @@
 package com.leonardo.cursomc;
 
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
-import com.leonardo.cursomc.domain.Categoria;
-import com.leonardo.cursomc.domain.Cidade;
-import com.leonardo.cursomc.domain.Cliente;
-import com.leonardo.cursomc.domain.Endereco;
-import com.leonardo.cursomc.domain.Estado;
-import com.leonardo.cursomc.domain.ItemPedido;
-import com.leonardo.cursomc.domain.Pagamento;
-import com.leonardo.cursomc.domain.PagamentoComBoleto;
-import com.leonardo.cursomc.domain.PagamentoComCartao;
-import com.leonardo.cursomc.domain.Pedido;
-import com.leonardo.cursomc.domain.Produto;
-import com.leonardo.cursomc.domain.enums.EstadoPagamento;
-import com.leonardo.cursomc.domain.enums.TipoCliente;
-import com.leonardo.cursomc.repositories.CategoriaRepository;
-import com.leonardo.cursomc.repositories.CidadeRepository;
-import com.leonardo.cursomc.repositories.ClienteRepository;
-import com.leonardo.cursomc.repositories.EnderecoRepository;
-import com.leonardo.cursomc.repositories.EstadoRepository;
-import com.leonardo.cursomc.repositories.ItemPedidoRepository;
-import com.leonardo.cursomc.repositories.PagamentoRepository;
-import com.leonardo.cursomc.repositories.PedidoRepository;
-import com.leonardo.cursomc.repositories.ProdutoRepository;
-import com.leonardo.cursomc.services.S3Service;
 
 @SpringBootApplication
 public class CursomcApplication implements CommandLineRunner {
@@ -68,8 +39,6 @@ public class CursomcApplication implements CommandLineRunner {
 	private ItemPedidoRepository itemPedidoRepository;
 	*/
 	
-	@Autowired
-	private S3Service s3Service;
 	
 	
 	public static void main(String[] args) {
@@ -78,7 +47,7 @@ public class CursomcApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		s3Service.uploadFile("C:\\Users\\Leonardo\\Pictures\\Saved Pictures\\roma.jpg");
+	
 		
 /*		Categoria cat1 = new Categoria(null, "informatica");
 		Categoria cat2 = new Categoria(null, "Escritorio");
