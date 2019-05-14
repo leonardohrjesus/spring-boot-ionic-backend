@@ -18,7 +18,7 @@ import com.leonardo.cursomc.services.exceptions.FileException;
 import com.leonardo.cursomc.services.exceptions.ObjectNotFoundException;
 
 @ControllerAdvice
-public class ResourceExceotionHandler {
+public class ResourceExceptionHandler {
 	
 	
 	@ExceptionHandler(ObjectNotFoundException.class)
@@ -50,7 +50,7 @@ public class ResourceExceotionHandler {
 	
 	
 	@ExceptionHandler(AuthorizationException.class)
-	public ResponseEntity<StandardError> authorization(ObjectNotFoundException e , HttpServletRequest request){
+	public ResponseEntity<StandardError> authorization(AuthorizationException e , HttpServletRequest request){
 		StandardError err = new StandardError(HttpStatus.FORBIDDEN.value(), e.getMessage(), System.currentTimeMillis());
 		
 		return ResponseEntity.status(HttpStatus.FORBIDDEN).body(err);
